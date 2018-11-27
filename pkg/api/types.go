@@ -214,7 +214,7 @@ type IdentityProvider struct {
 type AADIdentityProvider struct {
 	Kind     string `json:"kind,omitempty"`
 	ClientID string `json:"clientId,omitempty"`
-	Secret   string `json:"secret,omitempty"`
+	Secret   string `json:"secret,omitempty" conform:"redact"`
 	TenantID string `json:"tenantId,omitempty"`
 }
 
@@ -222,7 +222,7 @@ type AADIdentityProvider struct {
 // for Azure Resource CRUD.
 type ServicePrincipalProfile struct {
 	ClientID string `json:"clientId,omitempty"`
-	Secret   string `json:"secret,omitempty"`
+	Secret   string `json:"secret,omitempty" conform:"redact"`
 }
 
 // AzProfile holds the azure context for where the cluster resides
